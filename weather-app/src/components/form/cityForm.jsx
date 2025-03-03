@@ -12,13 +12,14 @@ function CityForm() {
   }, []);
 
   const handleCityValue = (event) => {
-    setWantedCity(JSON.parse(event.target.value).id)
-  }
+    setWantedCity(JSON.parse(event.target.value).id);
+  };
 
   return (
     <>
       <label htmlFor="city">شهر خود را انتخاب کنید</label>
       <select id="city" onChange={handleCityValue}>
+        <option value="select"> شهر مورد نظر خود را انتخاب کنید </option>
         {cities.map((city) => (
           <option value={JSON.stringify(city)} key={city.id}>
             {city.name}
@@ -26,7 +27,11 @@ function CityForm() {
         ))}
       </select>
 
-      <Link to={`/info/${wantedCity}`}> بررسی شهر </Link>
+      {typeof wantedCity == "string" ? (
+        <Link to={`/info/${wantedCity}`}> بررسی شهر </Link>
+      ) : (
+        <p>بررسی شهر </p>
+      )}
     </>
   );
 }
