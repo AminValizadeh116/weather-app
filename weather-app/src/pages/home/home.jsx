@@ -1,11 +1,10 @@
 import { useEffect, useState } from "react";
-import CityForm from "../../components/form/cityForm";
+import CityForm from "../../components/cityForm";
 
 function Home() {
 
   return (
     <div>
-        <h1>home</h1>
         <CityForm />
     </div>
   )

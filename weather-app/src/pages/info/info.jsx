@@ -1,8 +1,6 @@
 import { useParams } from "react-router";
-import CityForm from "../../components/form/cityForm";
-import { useEffect, useRef, useState } from "react";
-import { use } from "react";
-import GetCityWeather from "../../components/form/GetCityWeather";
+import { useEffect, useState } from "react";
+import GetCityWeather from "../../components/GetCityWeather";
 
 function Info() {
   const [city, setCity] = useState('');
